@@ -1,18 +1,25 @@
 class Header {
-    create() {
+    create(cost = 0, num = 0) {
         let header = document.createElement('header')
         header.classList.add('header')
         header.setAttribute('data-status','busket')
         header.innerHTML = `
-            <div class="header__cost">$${getCookie('cost')}</div>
+            <div class="header__cost">$${cost}</div>
             <div class="header__busket">Busket</div>
-            <div class="header__num">${getCookie('num')}</div>
+            <div class="header__num">${num}</div>
         `
         return header
     }
     init() {
-        let element = this.create();
+        if (localStorage.getItem('busket')) {
+            let element = this.create(getCookie('cost'), getCookie('num'));
         return element;
+        } else {
+            document.cookie = 'cost=0'
+            document.cookie = 'num=0'
+            let element = this.create();
+        return element;
+        }
     }
 }
 

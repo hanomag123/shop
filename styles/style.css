@@ -24,6 +24,7 @@
 .main {
     box-sizing: border-box;
     padding: 30px;
+    min-height: calc(100vh - 101px);
 }
 .main__container {
     margin: 0 auto;
@@ -51,13 +52,53 @@
     border-radius: 10px;
     cursor: pointer;
 
-    width: 300px;
+    width: 28%;
+    height: 600px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+.main__str {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+    margin: 0 auto;
+
+    width: 80%;
     height: 600px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
     position: relative;
 }
 .id {
     display: none;
+}
+.main__buttons {
+    height: 220px;
+    width: 250px;
+    border: 0;
+    border-radius: 5px;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.main__button {
+    margin-top: 10px;
+    height: 100px;
+    width: 250px;
+    border: 0;
+    border-radius: 5px;
+    /* position: absolute; */
+    /* display: none; */
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 .main__add {
     height: 100px;
@@ -72,7 +113,7 @@
 }
 .main__shadow {
     padding: 15px;
-    width: 300px;
+    width: calc(100% - 30px);
     height: 600px;
     position: absolute;
     background-color: black;
@@ -81,10 +122,12 @@
     display: none;
 }
 .main__item:hover .main__shadow,
-.main__item:hover .main__add{
+.main__item:hover .main__add,
+.main__item:hover .main__buttons{
     display: unset;
 }
-.main__add:active {
+.main__add:active,
+.main__button:active {
     transform: scale(1.1);
 }
 .main__wrapper {

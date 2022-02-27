@@ -1,13 +1,12 @@
 class Main {
     create() {
         let main = document.createElement('main'),
-            catalog = localStorage.getItem('catalog'),
-            container = document.createElement('div');
+            container = document.createElement('div'),
+            catalog = localStorage.getItem('catalog')
         catalog = JSON.parse(catalog)
         container.classList.add('main__container')
         main.classList.add('main')
         main.appendChild(container)
-
         catalog.forEach((element) => {
             container.innerHTML += `
             <div class="main__item">
